@@ -1,0 +1,17 @@
+{
+  "name": "@thinkora/security",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Security utilities for Thinkora — encryption, permissions, SQL guards, upload validation, and audit logging",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}

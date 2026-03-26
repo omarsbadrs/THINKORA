@@ -1,0 +1,49 @@
+{
+  "name": "thinkora",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Thinkora — AI Command Center with RAG, MCP integrations, and model routing",
+  "author": "Thinkora",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:unit": "turbo run test:unit",
+    "test:e2e": "turbo run test:e2e",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "bootstrap": "tsx scripts/bootstrap.ts",
+    "verify-env": "tsx scripts/verify-env.ts",
+    "seed": "tsx scripts/seed-demo-data.ts",
+    "verify-connectors": "tsx scripts/verify-connectors.ts",
+    "sync-models": "tsx scripts/sync-models.ts",
+    "db:migrate": "supabase db push",
+    "db:reset": "supabase db reset",
+    "db:seed": "pnpm seed",
+    "db:studio": "supabase studio",
+    "dev:web": "turbo run dev --filter=@thinkora/web",
+    "dev:api": "turbo run dev --filter=@thinkora/api",
+    "dev:worker": "turbo run dev --filter=@thinkora/worker",
+    "build:web": "turbo run build --filter=@thinkora/web",
+    "build:api": "turbo run build --filter=@thinkora/api"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "eslint": "^9.15.0",
+    "prettier": "^3.4.0",
+    "tsx": "^4.19.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}

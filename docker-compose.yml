@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  redis_data:
+
+# NOTE: Supabase is managed via the Supabase CLI (supabase start).
+# This compose file provides only supplementary services like Redis.
+# Run `supabase start` separately for Postgres, Auth, Storage, etc.
